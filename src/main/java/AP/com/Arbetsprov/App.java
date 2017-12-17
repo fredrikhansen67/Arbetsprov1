@@ -23,7 +23,7 @@ public class App
     public static void main( String[] args )
     {
     	
-        System.out.println( "Arbetsprov!" );
+        System.out.println( "Arbetsprov !!" );
         String jsonData = "C:\\Users\\fredrik\\arbetsprov\\Arbetsprov\\names.json";
         JSONParser parser = new JSONParser();
         try {
