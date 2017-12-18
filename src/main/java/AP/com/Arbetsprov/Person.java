@@ -55,13 +55,13 @@ public class Person {
 	}
 
 	public static Comparator<Person> FirtNameComparator = new Comparator<Person>() {
-        public int compare(Person e1, Person e2) {
-            return e1.getfName().compareTo(e2.getfName());
+        public int compare(Person obj1, Person obj2) {
+            return obj1.getfName().compareTo(obj2.getfName());
         }	
     };
     public static Comparator<Person> SurNameComparator = new Comparator<Person>() {
-        public int compare(Person e1, Person e2) {
-            return e1.geteName().compareTo(e2.geteName());
+        public int compare(Person obj1, Person obj2) {
+            return obj1.geteName().compareTo(obj2.geteName());
         }	
     };
     
