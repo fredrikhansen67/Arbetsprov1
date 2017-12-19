@@ -29,10 +29,8 @@ public class App
         String jsonData = "C:\\Users\\fredrik\\arbetsprov\\Arbetsprov\\names.json";
         JSONParser parser = new JSONParser();
         try {
-            Object obj = parser.parse(new FileReader("names.json"));
-            
+            Object obj = parser.parse(new FileReader("names.json"));  
             JSONObject jsonObject = (JSONObject) obj;
-//            System.out.println(jsonObject);            
             JSONArray arr =  (JSONArray) jsonObject.get("names");
             
             // loop igenom arrayen addera objekten till listan
@@ -40,8 +38,9 @@ public class App
             while (iterator.hasNext()) {
             	JSONObject p = (JSONObject )iterator.next();
             	personLista.add(new Person(p.get("firstname").toString(), p.get("surname").toString(), p.get("gender").toString()));
-//                System.out.println(iterator.next());
             }
+            
+            
 //            printFirstNameListSorted();
 //            printSurNameListSorted();
             ListItemCounter.arrayElementCountSurname(personLista);
