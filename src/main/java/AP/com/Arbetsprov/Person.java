@@ -3,7 +3,7 @@ package AP.com.Arbetsprov;
 import java.util.Comparator;
 
 public class Person {
-	private static int counter=0;
+	private static int counter=0;//Räknar upp antal objekt klassen skapat
 	private int personID;
 	private  String fName;
 	private  String eName;

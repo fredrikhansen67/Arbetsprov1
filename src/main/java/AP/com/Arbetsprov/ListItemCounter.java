@@ -17,15 +17,7 @@ public class ListItemCounter
         while ( iter.hasNext()) 
         {	
         	Person i = (Person) iter.next();
-
-            if(elementCountMap.containsKey(i.getfName()))
-	            {
-	                elementCountMap.put(i.getfName(), elementCountMap.get(i.getfName())+1);	
-	            }
-	            else
-	            {
-	                elementCountMap.put(i.getfName(), 1);
-	            }
+            elementCountMap.put(i.getfName(), (elementCountMap.get(i.getfName()) == null) ? 1 : elementCountMap.get(i.getfName()) + 1);
         }
         printNameList();          
     }
@@ -39,16 +31,7 @@ public class ListItemCounter
         while ( iter.hasNext()) 
         { 	
         	Person i = (Person) iter.next();
-        	//Found an existin match, adding to the counter
-            if(elementCountMap.containsKey(i.geteName()))
-            {
-                elementCountMap.put(i.geteName(), elementCountMap.get(i.geteName())+1);
-            }
-            //No match, add the new name to the list
-            else
-            {
-                elementCountMap.put(i.geteName(), 1);
-            }
+        	elementCountMap.put(i.geteName(), (elementCountMap.get(i.geteName()) == null) ? 1 : elementCountMap.get(i.geteName()) + 1);
         }
         printNameList();          
     }

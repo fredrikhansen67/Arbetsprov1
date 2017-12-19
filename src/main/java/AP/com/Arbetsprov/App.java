@@ -5,11 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -26,7 +23,7 @@ public class App
     {
     	
         System.out.println( "Arbetsprov !!" );
-        String jsonData = "C:\\Users\\fredrik\\arbetsprov\\Arbetsprov\\names.json";
+//        String jsonData = "C:\\Users\\fredrik\\arbetsprov\\Arbetsprov\\names.json";
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("names.json"));  
@@ -67,7 +64,7 @@ public class App
     	printListContent();	
     }
     protected static void printListContent() {
-    	System.out.println("Print all objects :"+personLista.size());
+    	System.out.println("Print all "+personLista.size()+" objects :");
     	for(Person p:personLista) {		
     		System.out.println(p.toString());
     	}
