@@ -5,8 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -27,10 +29,10 @@ public class App
         String jsonData = "C:\\Users\\fredrik\\arbetsprov\\Arbetsprov\\names.json";
         JSONParser parser = new JSONParser();
         try {
-            Object obj = parser.parse(new FileReader(jsonData));
+            Object obj = parser.parse(new FileReader("names.json"));
             
             JSONObject jsonObject = (JSONObject) obj;
-            System.out.println(jsonObject);            
+//            System.out.println(jsonObject);            
             JSONArray arr =  (JSONArray) jsonObject.get("names");
             
             // loop igenom arrayen addera objekten till listan
@@ -38,9 +40,12 @@ public class App
             while (iterator.hasNext()) {
             	JSONObject p = (JSONObject )iterator.next();
             	personLista.add(new Person(p.get("firstname").toString(), p.get("surname").toString(), p.get("gender").toString()));
-                System.out.println(iterator.next());
+//                System.out.println(iterator.next());
             }
-            printSurNameListSorted();
+//            printFirstNameListSorted();
+//            printSurNameListSorted();
+            ListItemCounter.arrayElementCountSurname(personLista);
+            ListItemCounter.arrayElementCountFirstname(personLista);
 //            printListContent();
 
         } catch (FileNotFoundException e){
@@ -53,6 +58,7 @@ public class App
     }
     
 
+    
     protected static void printFirstNameListSorted(){
     	Collections.sort(personLista, Person.FirtNameComparator);
     	printListContent();	
